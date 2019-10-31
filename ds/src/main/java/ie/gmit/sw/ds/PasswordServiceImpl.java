@@ -6,7 +6,7 @@ import com.google.protobuf.ByteString;
 import io.grpc.stub.StreamObserver;
 
 //  Adapted from async lab: https://github.com/john-french/distributed-systems-labs/tree/master/grpc-async-inventory
-
+//PART1
 
 public class PasswordServiceImpl extends PasswordServiceGrpc.PasswordServiceImplBase {
 
