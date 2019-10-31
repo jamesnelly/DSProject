@@ -13,6 +13,8 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
+//  Adapted from https://github.com/john-french/distributed-systems-labs/tree/master/grpc-async-inventory  
+
 public class Client {
 	
 	private static final Logger logger =
@@ -36,15 +38,14 @@ public class Client {
     }
 
     public void sendHashReq(){
+    	//INPUTS FOR USER
     	 System.out.println("Enter ID:");
          UserID = userInput.nextInt();
          System.out.println("Enter Password:");
          UserPassword = userInput.next();
 
-        // Build HashRequest
         System.out.println("Sending Hash Request");
         HashRequest hashRequest = HashRequest.newBuilder().setUserID(UserID).setPassword(UserPassword).build();
-        // HashResponse
         HashResponse hashResponse;
 
         try {

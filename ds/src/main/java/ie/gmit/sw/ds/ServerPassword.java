@@ -5,6 +5,8 @@ import io.grpc.ServerBuilder;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+//Adapted from async lab: https://github.com/john-french/distributed-systems-labs/tree/master/grpc-async-inventory
+
 public class ServerPassword {
 
 	private io.grpc.Server grpcServer;

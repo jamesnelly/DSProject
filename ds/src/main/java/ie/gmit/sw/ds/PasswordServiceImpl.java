@@ -5,6 +5,9 @@ import com.google.protobuf.ByteString;
 
 import io.grpc.stub.StreamObserver;
 
+//  Adapted from async lab: https://github.com/john-french/distributed-systems-labs/tree/master/grpc-async-inventory
+
+
 public class PasswordServiceImpl extends PasswordServiceGrpc.PasswordServiceImplBase {
 
 	PasswordServiceImpl() {
@@ -32,7 +35,6 @@ public class PasswordServiceImpl extends PasswordServiceGrpc.PasswordServiceImpl
 	public void validate(ValidateRequest request, StreamObserver<BoolValue> responseObserver) {
 
 		try {
-			// (isExpectedPassword(char[] password, byte[] salt, byte[] expectedHash)
 			char[] userPassword = request.getPassword().toCharArray();
 			byte[] hashedPassword = request.getHashedPassword().toByteArray();
 			byte[] salt = request.getSalt().toByteArray();
