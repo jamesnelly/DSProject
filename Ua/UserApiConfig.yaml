@@ -1,0 +1,5 @@
+# Adapted from https://github.com/john-french/artistAPI-dropwizard
+server:
+  applicationConnectors:
+    - type: http
+      port: 9000
