@@ -25,25 +25,37 @@ import javax.ws.rs.core.Response.Status;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserApiResource {
-	
+
 	private HashMap<Integer, UserAccount> AccountUsers = new HashMap<Integer, UserAccount>();
 
 	public UserApiResource() {
-		UserAccount test1 = new UserAccount(01,"abc","abc@gmail.com","abc");
-		UserAccount test2 = new UserAccount(02,"def","def@gmail.com","def");
+		UserAccount test1 = new UserAccount(01, "abc", "abc@gmail.com", "abc");
+		UserAccount test2 = new UserAccount(02, "def", "def@gmail.com", "def");
 		AccountUsers.put(test1.UserID, test1);
 		AccountUsers.put(test2.UserID, test2);
 	}
-	// show all users 
+
+	// showing a list of all users
 	@GET
-	public Collection <UserAccount>getUsers(){
+	public Collection<UserAccount> getUsers() {
 		return AccountUsers.values();
 	}
-	
-	// getting a specific user
+
+	// getting a specific user by ID
 	@GET
-	@Path("{UserID}")
+	@Path("/{UserID}")
 	public UserAccount getUserID(@PathParam("UserID") int UserID) {
 		return AccountUsers.get(UserID);
 	}
+
+	// Delete user by ID
+	@DELETE
+	@Path("/{UserID}")
+	public Collection<UserAccount> DeleteUserByID(@PathParam("UserID") int UserID) {
+		if (!AccountUsers.values().isEmpty()) {
+			AccountUsers.remove(UserID);
+		}
+		return AccountUsers.values();
+	}
+	
 }
