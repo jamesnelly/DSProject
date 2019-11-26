@@ -52,7 +52,6 @@
     </dependencies>
 
     <build>
-        <!-- Added extensions from ClientPassword pom -->
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>
@@ -61,7 +60,6 @@
             </extension>
         </extensions>
         <plugins>
-            <!-- Added plugin from ClientPassword pom -->
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
@@ -120,7 +118,7 @@
                                         implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>ie.gmit.ds.UserAccountApiApp</mainClass>
+                                    <mainClass>ie.gmit.sw.UserApiApp</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
