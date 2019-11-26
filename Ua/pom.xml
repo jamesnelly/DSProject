@@ -11,7 +11,6 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-         <!-- Added Extra properties from ClientPassword pom -->
         <dropwizard.version>1.0.0</dropwizard.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <grpc.version>1.23.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
@@ -27,7 +26,6 @@
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
-        <!-- Added extra dependencies from ClientPassword pom -->
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
@@ -49,8 +47,17 @@
             <artifactId>grpc-stub</artifactId>
             <version>1.23.0</version>
         </dependency>
-    </dependencies>
-
+        <dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+			</dependency>
+			<dependency>
+			 <groupId>org.glassfish.jaxb</groupId>
+			 <artifactId>jaxb-runtime</artifactId>
+			 <version>2.3.1</version>
+		</dependency>
+		</dependencies>
     <build>
         <extensions>
             <extension>

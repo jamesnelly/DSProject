@@ -1,3 +1,4 @@
+// Adapted from https://github.com/john-french/artistAPI-dropwizard
 package ie.gmit.sw;
 
 import com.codahale.metrics.health.HealthCheck;
