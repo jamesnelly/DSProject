@@ -4,14 +4,14 @@ package ie.gmit.sw;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserAccount {
-	
-	// needed for Jackson deserialisation
-	public UserAccount() {}
 
 	int UserID;
 	String UserName;
 	String Email;
 	String Password;
+
+	public UserAccount() {
+	}
 
 	public UserAccount(int UserID, String UserName, String Email, String Password) {
 		this.UserID = UserID;
@@ -20,10 +20,14 @@ public class UserAccount {
 		this.Password = Password;
 	}
 
-	//No setters as we want our class to be immutable 
+	// No setters as we want our class to be immutable
 	@JsonProperty
 	public int getUserID() {
 		return UserID;
+	}
+
+	public static void setUserID(int UserID) {
+		// this.UserID = UserID;
 	}
 
 	@JsonProperty
@@ -40,4 +44,5 @@ public class UserAccount {
 	public String getPassword() {
 		return Password;
 	}
+
 }

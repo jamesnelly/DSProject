@@ -16,11 +16,11 @@ public class UserApiApp extends Application<UserApiConfig> {
 	public void run(UserApiConfig UserApiConfig, Environment environment) throws Exception {
 
 		logger.info("Getting Rest Resource");
-		final UserApiResource resource = new UserApiResource();
-
-		environment.jersey().register(new UserApiResource());
+		final UserApiResource resource = new UserApiResource(null);
 
 		final UserHealthCheck healthCheck = new UserHealthCheck();
 		environment.healthChecks().register("exp", healthCheck);
+		
+		environment.jersey().register(resource);
 	}
 }
