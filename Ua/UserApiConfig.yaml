@@ -1,5 +1,6 @@
 # Adapted from https://github.com/john-french/artistAPI-dropwizard
 # Our Application will start on Port 9000
+#Part 2 complete i think.
 server:
   applicationConnectors:
     - type: http
