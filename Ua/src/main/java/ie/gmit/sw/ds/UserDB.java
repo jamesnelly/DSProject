@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.sw.ds;
 
 import java.util.ArrayList;
 import java.util.HashMap;

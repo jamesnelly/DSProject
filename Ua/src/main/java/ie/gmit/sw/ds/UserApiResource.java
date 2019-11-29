@@ -1,4 +1,5 @@
-package ie.gmit.sw;
+// Adapted from https://howtodoinjava.com/dropwizard/tutorial-and-hello-world-example/
+package ie.gmit.sw.ds;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +19,9 @@ import javax.ws.rs.core.Response;
 
 import javax.ws.rs.core.Response.Status;
 
+// this will handle requests for the base path
 @Path("/users")
+// this will return JSON responses 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserApiResource {
@@ -60,7 +63,8 @@ public class UserApiResource {
 			return Response.status(Status.NOT_FOUND).build();
 	}
 
-	// update user
+	// update user <NOT working for me getting Error code 400 (Unable to process
+	// JSON)>
 	@PUT
 	@Path("/{UserID}")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -81,7 +85,5 @@ public class UserApiResource {
 			return Response.ok(AccountUsers).build();
 		} else
 			return Response.status(Status.NOT_FOUND).build();
-
 	}
-
 }
